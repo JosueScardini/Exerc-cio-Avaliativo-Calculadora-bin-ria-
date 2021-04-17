@@ -3,17 +3,55 @@
 #include <cmath>
 using namespace std;
 
+int soma(int novoValor, int novoValor2){
+    int somatorio= novoValor+novoValor2;
+    return somatorio;
+}
+
+int subtracao(int novoValor, int novoValor2){
+  int sub= novoValor-novoValor2;
+  return sub;
+}
+
+int multiplicacao(int novoValor, int novoValor2){
+   int multi= novoValor*novoValor2;
+   return multi;
+}
+
+int divisao(int novoValor, int novoValor2){
+   int div= novoValor/novoValor2;
+   return div;
+}
+
+ int resto(int novoValor, int novoValor2){
+   int rest = (novoValor%novoValor2);
+   return rest;
+}
+
+//Conversão de decimal para binário
+string converterBinario(int nconv)
+{
+    string nconv2;
+    while (nconv != 0){
+        nconv2 += ( nconv % 2 == 0 ? "0" : "1" );
+        nconv /= 2;
+    }
+
+    return nconv2;
+}
+
 int main() {
   int num1, num2,j, sobra, novoValor = 0, novoValor2=0;
   int somatorio, sub, multi, div, rest;
   char operacao;
 
   cout << "Qual operação deseja fazer? 'Digite +,-,x,/ ou %'" << endl;
-    cin >> operacao;
+  cin >> operacao;
 
   //numero 1
   cout<< "Digite um número binário entre 0 e 11111111 "<<endl;
   cin>> num1;
+  
   
   //Transformando para decimal
    for (j = 0; j < 7; j++) {
@@ -22,8 +60,9 @@ int main() {
         novoValor += sobra * pow(2,j);
     }
     for (j = 0; j < 7; j++) {
-      if (num1!='1'&&num1!='0') {
+      if (num1!=1&&num1!=0) {
         cout<<"Número inválido"<<endl;
+        return -1;
       }
     }
 
@@ -39,13 +78,26 @@ int main() {
     }
    
   for (j = 0; j < 7; j++) {
-      if (num2!='1'&&num2!='0') {
+      if (num2!=1&&num2!=0) {
         cout<<"Número inválido"<<endl;
+        return -1;
       }
     }
   
+  if(operacao == '+')
+  {soma(novoValor, novoValor2);
 
+  } else if(operacao == '-')
+  { subtracao (novoValor,novoValor2);
 
+  } else if(operacao == 'x')
+  {multiplicacao(novoValor, novoValor2);
 
+  } else if(operacao == '/')
+  { divisao (novoValor, novoValor2);
+
+  } else if(operacao == '%')
+  {resto(novoValor, novoValor2);
+  }
 
 }
