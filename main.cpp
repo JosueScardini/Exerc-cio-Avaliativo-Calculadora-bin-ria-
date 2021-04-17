@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <cmath>
 using namespace std;
 
 int main() {
@@ -18,7 +20,15 @@ int main() {
     }
 
   //numero 2
-  
+  cout << "Digite outro número binário entre 0 e 11111111 "<<endl;
+    cin >> num2;
+    
+  //Transformando para decimal
+    for (j = 0; j < 6; j++) {
+        sobra = num2 - ((num2 / 10)*10);
+        num2 = num2 / 10;
+        novoValor2 += sobra * pow(2,j);
+    }
 
 
 
