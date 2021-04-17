@@ -42,7 +42,7 @@ string converterBinario(int nconv)
 
 int main() {
   int num1, num2,j, sobra, novoValor = 0, novoValor2=0;
-  int somatorio, sub, multi, div, rest;
+  int somatorio, sub, multi, div, rest, resultfinal;
   char operacao;
 
   cout << "Qual operação deseja fazer? 'Digite +,-,x,/ ou %'" << endl;
@@ -85,19 +85,20 @@ int main() {
     }
   
   if(operacao == '+')
-  {soma(novoValor, novoValor2);
+  { resultfinal=soma(novoValor, novoValor2);
 
   } else if(operacao == '-')
-  { subtracao (novoValor,novoValor2);
+  { resultfinal=subtracao (novoValor,novoValor2);
 
   } else if(operacao == 'x')
-  {multiplicacao(novoValor, novoValor2);
+  {resultfinal=multiplicacao(novoValor, novoValor2);
 
   } else if(operacao == '/')
-  { divisao (novoValor, novoValor2);
+  { resultfinal=divisao (novoValor, novoValor2);
 
   } else if(operacao == '%')
-  {resto(novoValor, novoValor2);
+  {resultfinal=resto(novoValor, novoValor2);
   }
+  cout << "O resultado é: " << converterBinario(resultfinal);
 
 }
